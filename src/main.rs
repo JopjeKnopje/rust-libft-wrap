@@ -3,12 +3,12 @@
 #![allow(non_snake_case)]
 
 
-include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
+include!("bindings.rs");
 
 fn main() {
     unsafe {
 
-    let x = ft_isalpha('a' as i32);
+    let x = hello();
     println!("x {}",x);
     }
     println!("Hello, world!");
