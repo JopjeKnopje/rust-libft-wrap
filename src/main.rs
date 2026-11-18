@@ -2,12 +2,21 @@
 #![allow(non_camel_case_types)]
 #![allow(non_snake_case)]
 
-use rust_c_bind::ft_strchr;
+use rust_c_bind::{ft_strdup, ft_strlen};
 
 fn main() {
     let string = "this is a test string hihi\0";
 
-    let x = unsafe { *ft_strchr(string.as_ptr().cast(), 'g' as i32) };
+    unsafe {
+        let mut s = ft_strdup(string.as_ptr() as *const i8) as *mut u8;
+        let len = ft_strlen(s.cast());
 
-    println!("found {} in string: {}", x.cast_unsigned() as char, string);
+        while s.read() != 0  {
+            dbg!("dupped string {}", *s as char);
+            s = s.offset(1);
+        }
+        let sn = String::from_raw_parts(s, len, len);
+        println!("sn : {}", sn);
+    };
+
 }
