@@ -52,6 +52,7 @@ fn main() {
         libdir_path.join("src/mem/ft_memcmp.c"),
         libdir_path.join("src/mem/ft_memcpy.c"),
         libdir_path.join("src/mem/ft_memmove.c"),
+        libdir_path.join("src/mem/ft_memset.c"),
         libdir_path.join("src/put/ft_putchar_fd.c"),
         libdir_path.join("src/put/ft_putendl_fd.c"),
         libdir_path.join("src/put/ft_putnbr_fd.c"),
